@@ -14,3 +14,9 @@ let accountState
 //const must hava an assignment
 console.log(accountId);
 console.table([accountId,accountEmail,accountPassword,accountCity,accountState])
+
+
+let a = 1000
+const b = a
+a = 200
+console.log(b)
