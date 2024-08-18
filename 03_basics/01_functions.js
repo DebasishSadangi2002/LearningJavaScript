@@ -26,7 +26,9 @@ function loginUserMessage(username){
     return `${username} just logged in`
 }
 
-console.log(loginUserMessage());
+//console.log(loginUserMessage());
+
+
 //username === undefined also written as !username
 
 function loginUserMessage2(username){
@@ -36,4 +38,38 @@ function loginUserMessage2(username){
     }
     return `${username} just logged in`
 }
-console.log(loginUserMessage2());
+//console.log(loginUserMessage2());
+
+
+function calculateCartPrice(num1){
+    return num1
+}
+//console.log(calculateCartPrice(200));
+
+// Rest operator ...num1 for adding multiple opearands
+
+function calculateCartPrice1(...num1){
+    return num1
+}
+console.log(calculateCartPrice1(200,230,240,350,203));
+
+//Passing object to function
+User = {
+    username : "Debasish",
+    age : 21,
+ }
+
+ function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and age is ${anyobject.age}`);
+ }
+ handleObject(User)
+
+// Passing array to function
+
+const arr = [100,200,300,400,500,600,700]
+
+function handleArray(anyArr){
+    console.log(anyArr[3]);
+    
+}
+handleArray(arr)
