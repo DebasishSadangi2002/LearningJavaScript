@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="todo-container">
+        <input type="text" id="textInput" placeholder="Enter a new Task">
+        <button class="addTaskBtn">Add Task</button>
+        <ul class="tasklist"></ul>
+    </div>
+</body>
+<script>
+    task = document.getElementById('textInput')
+    function addTask(){
+        const li = document.createElement('li')
+        // Get the current time
+        const now = new Date();
+        const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+        // Create the task text with the current time
+        const text = document.createTextNode(`${task.value} - ${timeString}`);
+        li.appendChild(text);
+        const dltBtn = document.createElement('button')
+        dltBtn.innerHTML = "Compleated"
+        dltBtn.addEventListener("click", function(){li.remove()})
+        li.appendChild(dltBtn)
+        document.querySelector('.tasklist').appendChild(li)
+    }
+    const btn = document.querySelector('.addTaskBtn')
+    btn.addEventListener('click',addTask)
+</script>
+</html>
